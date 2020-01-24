@@ -4,6 +4,13 @@ import React, {
 } from 'react';
 import axios from "axios";
 import CharacterTile from "./CharacterTile";
+import styled from "styled-components";
+
+const ACLayout = styled.div `
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+`
 
 function CharacterPage() {
     const [characters, setCharacters] = useState([]);
@@ -26,7 +33,7 @@ function CharacterPage() {
          
     }, []);
     return (
-        <div className="aboutCharacter">
+        <ACLayout className="aboutCharacter">
             {characters.map(c => {
                 return (
                     <CharacterTile
@@ -38,7 +45,7 @@ function CharacterPage() {
                     />
                 )
             })}
-        </div>
+        </ACLayout>
     )
 };
 export default CharacterPage;

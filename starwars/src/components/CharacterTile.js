@@ -6,18 +6,30 @@ const CharacterDiv = styled.div `
     height: 400px;
     display: flex;
     flex-direction: column;
-    background-color: sand;
+    background-color: goldenrod;
+    border: 10px outset peru;
     margin: 3%;
     padding: 3%;
-
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+    
 `
+const NameStyle = styled.h2 `
+    color: saddlebrown;
+    text-shadow: 1px 1px 2px black;
+    font-size: 2rem;
+`
+
 
 const CharacterCard = props => {
     console.log("this is props", props);
 
     return (
         <CharacterDiv className="aboutCharacter">
-            <h2>Charcter Name: {props.name}</h2>
+            <NameStyle>Charcter Name: {props.name}</NameStyle>
             <p>Hair Color: {props.haircolor}</p>
             <p>Height: {props.height}</p>
             <p>Birth Year: {props.birthyear}</p>
