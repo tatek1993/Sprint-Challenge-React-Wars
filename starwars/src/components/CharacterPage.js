@@ -3,8 +3,42 @@ import React, {
     useEffect
 } from 'react';
 import axios from "axios";
-import CharacterTile from "./components/CharacterTile";
+import CharacterTile from "./CharacterTile";
 
-function CharacterList() {
-    const [character, setCharacter] = useState([]);
-}
+function CharacterPage() {
+    const [characters, setCharacters] = useState([]);
+    // debugger;
+    useEffect(() => {
+        axios.get("https://swapi.co/api/people/")
+            .then(res => {
+                console.log("Hello", res.data);
+                    setCharacters(res.data.results);
+                // axios.get("https://swapi.co/api/planets/1/")
+                //     .then(response => {
+                        
+                //     })
+            })
+            .catch(error => {
+                console.log(
+                    "the data was not returned", error
+                );
+            });
+         
+    }, []);
+    return (
+        <div className="aboutCharacter">
+            {characters.map(c => {
+                return (
+                    <CharacterTile
+                    key={c.url}
+                    name={c.name}
+                    haircolor={c.hair_color}
+                    height={c.height}
+                    birthyear={c.birth_year}
+                    />
+                )
+            })}
+        </div>
+    )
+};
+export default CharacterPage;
