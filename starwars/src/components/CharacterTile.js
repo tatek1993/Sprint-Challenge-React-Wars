@@ -13,6 +13,7 @@ const CharacterDiv = styled.div `
     align-items: center;
     justify-content: center;
     color: white;
+    text-shadow: 1px 1px 2px black;
     font-weight: bold;
     font-size: 1.4rem;
     
