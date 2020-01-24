@@ -20,7 +20,7 @@ const CharacterDiv = styled.div `
 `
 const NameStyle = styled.h2 `
     color: saddlebrown;
-    text-shadow: 1px 1px 2px black;
+    text-shadow: 1px 1px 2px white;
     font-size: 2rem;
 `
 
